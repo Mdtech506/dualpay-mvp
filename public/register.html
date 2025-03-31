@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DualPay - Create Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            min-height: 100vh;
+            overscroll-behavior-y: none;
+        }
+        .hero-pattern {
+            background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .card-shadow {
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-black">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/50 backdrop-blur-lg border-b border-black/10 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <a href="/" class="flex items-center">
+                    <img src="/images/Logo.jpg" alt="DualPay Logo" class="h-8 w-8">
+                    <span class="ml-2 text-xl font-bold">DualPay</span>
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-gray-600 hover:text-black px-3 py-2">Home</a>
+                    <a href="/login.html" class="text-gray-600 hover:text-black px-3 py-2">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen flex">
+        <!-- Left Section - Registration Form -->
+        <div class="w-full lg:w-1/2 min-h-screen flex items-center justify-center p-8">
+            <div class="w-full max-w-md space-y-8 pt-16">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold">Create your account</h2>
+                    <p class="mt-2 text-gray-600">Start your journey with DualPay</p>
+                </div>
+
+                <form id="registerForm" class="mt-8 space-y-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                            <input id="username" name="username" type="text" required 
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-black focus:border-black">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                            <input id="email" name="email" type="email" required 
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-black focus:border-black">
+                        </div>
+
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <input id="password" name="password" type="password" required 
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-black focus:border-black">
+                        </div>
+
+                        <div>
+                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                            <input id="confirmPassword" name="confirmPassword" type="password" required 
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-black focus:border-black">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input id="terms" name="terms" type="checkbox" required
+                            class="h-4 w-4 border-gray-300 rounded text-black focus:ring-black">
+                        <label for="terms" class="ml-2 block text-sm text-gray-700">
+                            I agree to the <a href="#" class="text-black hover:underline">Terms of Service</a> and 
+                            <a href="#" class="text-black hover:underline">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div>
+                        <button type="submit" 
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+
+                <p class="text-center text-sm text-gray-600">
+                    Already have an account? 
+                    <a href="/login.html" class="font-medium text-black hover:text-gray-800">Sign in</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Section - Features -->
+        <div class="hidden lg:flex w-1/2 min-h-screen bg-gradient-to-br from-gray-100 to-white hero-pattern items-center justify-center p-8">
+            <div class="grid gap-6 max-w-lg w-full">
+                <div class="bg-white/80 backdrop-blur-lg rounded-xl p-6 card-shadow border border-black/10">
+                    <h3 class="text-xl font-semibold mb-2">Secure Transactions</h3>
+                    <p class="text-gray-600">State-of-the-art encryption and security measures to protect your transactions.</p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-lg rounded-xl p-6 card-shadow border border-black/10">
+                    <h3 class="text-xl font-semibold mb-2">Global Payments</h3>
+                    <p class="text-gray-600">Send and receive payments worldwide with minimal fees.</p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-lg rounded-xl p-6 card-shadow border border-black/10">
+                    <h3 class="text-xl font-semibold mb-2">Digital Wallet</h3>
+                    <p class="text-gray-600">Manage your digital assets with our secure and user-friendly wallet.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+
+            if (!terms) {
+                alert('Please accept the Terms of Service and Privacy Policy');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, email, password })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Registration failed');
+                }
+
+                alert('Registration successful! Please login to continue.');
+                window.location.href = '/login.html';
+            } catch (error) {
+                alert('Registration failed: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
